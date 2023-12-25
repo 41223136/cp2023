@@ -2,7 +2,7 @@
 
 int main() {
     // 開啟文件以寫入位移和速度數據
-    FILE *outputFile = fopen("./../images/motion_data.txt", "w");
+    FILE *outputFile = fopen("./../images/motion_data.", "w");
     if (!outputFile) {
         fprintf(stderr, "無法創建數據文件。\n");
         return 1;
