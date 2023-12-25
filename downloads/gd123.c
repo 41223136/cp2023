@@ -42,12 +42,6 @@ void drawEUFlag(const char* filename) {
 
     // 將圖片輸出到文件
     pngout = fopen(filename, "wb");
-    if (pngout == NULL) {
-        fprintf(stderr, "打开输出文件时出错。\n");
-        gdImageDestroy(img);
-        return;
-    }
-
     gdImagePng(img, pngout);
     fclose(pngout);
 
@@ -56,6 +50,6 @@ void drawEUFlag(const char* filename) {
 }
 
 int main() {
-    drawEUFlag("./../images/gd123_flag.png");
+    drawEUFlag("eu_flag.png");
     return 0;
 }
