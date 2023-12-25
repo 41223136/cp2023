@@ -65,9 +65,12 @@ int main() {
 <p><img alt="" height="300" src="/images/gnuplot_ex1.png" width="600"/></p>
 <p></p>
 <h2>w6</h2>
-<p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;<br/>#include &lt;math.h&gt;</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;</pre>
+<p></p>
 <p>利用這些程式庫繪製出各國國旗</p>
-<h3>Roc</h3>
+<h3>ROC</h3>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China
 // 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621
 // cc roc_flag_in_gd.c -lgd -lm to link with gd and math library
@@ -427,7 +430,9 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotatio
     // 使用 gdImageFilledPolygon 绘制星形
     gdImageFilledPolygon(img, points, 10, color);
 }</pre>
+<h3>PROC</h3>
 <p><img alt="" height="267" src="/images/proc_flag.png" width="400"/></p>
+<h3>UK</h3>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
