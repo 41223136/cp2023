@@ -820,7 +820,16 @@ var w15 = {
 <p><small>利用 Shell 指令: <n style="color: red;">git submodule update --init</n> 取下子模組, 並以 <n style="color: red;">pip install flask flask_cors bs4 lxml pelican markdown gevent</n> 安裝 Run 執行所需的 Python 模組</small></p>
 <p><small>最後按下 Run 就可以啟動編輯網站, 編輯結束利用 Convert 轉為靜態網站, 最後利用 Git 頁面新增提交並 push.</small></p>
 <p>就完成了!</p>
-<h2>s.cycu.org</h2><h1>Brython</h1>
+<h2>s.cycu.org維護</h2>
+<p><small>1.登入 s.cycu.org 之後, 以 <n style="color: red;">ssh-keygen</n> 指令, 連續按下三個 Enter, 就可以在 .ssh 目錄建立 id_rsa 與 id_rsa.pub</small></p>
+<p>2.<small>在 Windows 11 以 sftp 帳號@s.cycu.org 登入遠端檔案傳輸模式後, cd .ssh 之後, 在 .ssh 目錄以 <n style="color: red;">get id_rsa*</n> 取下私鑰與公鑰</small></p>
+<p>3.<small>利用 SciTE 開啟 id_rsa.pub, 並將公鑰內容送到 Github 帳號 Settings 中的 SSH and GPG keys</small></p>
+<p>4.<small>下載 <a href="https://mde.tw/cpnote/downloads/config">config</a> SSH 設定檔案, 利用 sftp 模式, 以 put config 送到 s.cycu.org 帳號下的 .ssh 目錄, 此時在 s.cycu.org 已經可以利用 github.com 昨為代號, 透過代理主機與私鑰, 以<n style="color: red;">git clone --recurse-submodules<a href="mailto:git@github.com">git@github.com</a>:帳號/倉儲名稱.git</n> 取下倉儲內容, 並在 python3 server.py 之後啟動編輯網站, 改版後 Convert 轉靜態, 並透過 <n style="color: red;">chmod u+x acp</n> 讓 acp 可以執行.</small></p>
+<p>5.<small>改版並轉靜態之後, 就可以利用 acp 按鈕執行新增提交與推送</small></p>
+<p>6.<small>若已知同一倉儲已經在其他地方將改版資料推向 Github, 在 s.cycu.org 執行改版程序之前, 可以利用 <n style="color: red;">git pull</n> 減少之後推送時必須解決的衝突內容，盡量不要一次上傳很多，容易發生故障</small></p>
+<h2>windows維護</h2>
+<p></p>
+<p></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
