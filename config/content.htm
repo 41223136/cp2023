@@ -850,13 +850,14 @@ var w15 = {
 <p>最後按下 Run 就可以啟動編輯網站, 編輯結束利用 Convert 轉為靜態網站, 最後利用 Git 頁面新增提交並 push</p>
 <p>就完成了!</p>
 <p><span> </span></p><h2>s.cycu.org維護</h2>
-<p><small>1.登入 s.cycu.org 之後, 以 <n style="color: red;">ssh-keygen</n> 指令, 連續按下三個 Enter, 就可以在 .ssh 目錄建立 id_rsa 與 id_rsa.pub</small></p>
-<p>2.<small>在 Windows 11 以 sftp 帳號@s.cycu.org 登入遠端檔案傳輸模式後, cd .ssh 之後, 在 .ssh 目錄以 <n style="color: red;">get id_rsa*</n> 取下私鑰與公鑰</small></p>
-<p>3.<small>利用 SciTE 開啟 id_rsa.pub, 並將公鑰內容送到 Github 帳號 Settings 中的 SSH and GPG keys</small></p>
-<p>4.<small>下載 <a href="https://mde.tw/cpnote/downloads/config">config</a> SSH 設定檔案, 利用 sftp 模式, 以 put config 送到 s.cycu.org 帳號下的 .ssh 目錄, 此時在 s.cycu.org 已經可以利用 github.com 昨為代號, 透過代理主機與私鑰, 以<n style="color: red;">git clone --recurse-submodules<a href="mailto:git@github.com">git@github.com</a>:帳號/倉儲名稱.git</n> 取下倉儲內容, 並在 python3 server.py 之後啟動編輯網站, 改版後 Convert 轉靜態, 並透過 <n style="color: red;">chmod u+x acp</n> 讓 acp 可以執行.</small></p>
-<p>5.<small>改版並轉靜態之後, 就可以利用 acp 按鈕執行新增提交與推送</small></p>
-<p>6.<small>若已知同一倉儲已經在其他地方將改版資料推向 Github, 在 s.cycu.org 執行改版程序之前, 可以利用 <n style="color: red;">git pull</n> 減少之後推送時必須解決的衝突內容，盡量不要一次上傳很多，容易發生故障</small></p>
-<h2>windows維護</h2>
+<p><span>1.</span>登入<span> s.cycu.org </span>之後<span>, </span>以 <span>ssh-keygen </span>指令<span>, </span>連續按下三個<span> Enter, </span>就可以在<span> .ssh </span>目錄建立<span> id_rsa </span>與<span> id_rsa.pub</span></p>
+<p><span>2.</span>在<span> Windows 11 </span>以<span> sftp </span>帳號<span>@s.cycu.org </span>登入遠端檔案傳輸模式後<span>, cd .ssh </span>之後<span>, </span>在<span> .ssh </span>目錄以 <span>get id_rsa* </span>取下私鑰與公鑰</p>
+<p><span>3.</span>利用<span> SciTE </span>開啟<span> id_rsa.pub, </span>並將公鑰內容送到<span> Github </span>帳號<span> Settings </span>中的<span> SSH and GPG keys</span></p>
+<p><span>4.</span>下載 <span><a href="https://mde.tw/cpnote/downloads/config">config</a> SSH </span>設定檔案<span>, </span>利用<span> sftp </span>模式<span>, </span>以<span> put config </span>送到<span> s.cycu.org </span>帳號下的<span> .ssh </span>目錄<span>, </span>此時在<span> s.cycu.org </span>已經可以利用<span> github.com </span>昨為代號<span>, </span>透過代理主機與私鑰<span>, </span>以<span>git clone --recurse-submodules<a href="mailto:git@github.com">git@github.com</a>:</span>帳號<span>/</span>倉儲名稱<span>.git </span>取下倉儲內容<span>, </span>並在<span> python3 server.py </span>之後啟動編輯網站<span>, </span>改版後<span> Convert </span>轉靜態<span>, </span>並透過 <span>chmod u+x acp </span>讓<span> acp </span>可以執行<span>.</span></p>
+<p><span>5.</span>改版並轉靜態之後<span>, </span>就可以利用<span> acp </span>按鈕執行新增提交與推送</p>
+<p><span>6.</span>若已知同一倉儲已經在其他地方將改版資料推向<span> Github, </span>在<span> s.cycu.org </span>執行改版程序之前<span>, </span>可以利用 <span>git pull </span>減少之後推送時必須解決的衝突內容，盡量不要一次上傳很多，容易發生故障</p>
+<p><span> </span></p>
+<p></p><h2>windows維護</h2>
 <p></p>
 <p></p>
 <h1>Brython</h1>
