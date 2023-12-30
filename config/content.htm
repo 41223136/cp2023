@@ -2,7 +2,27 @@
 <p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite </a></p>
 <p><a href="https://github.com/41223136/cp2023">https://github.com/41223136/cp2023</a> (個人倉儲連結)</p>
 <p><a href="https://github.com/41223136/cp2023_ag2">https://github.com/41223136/cp2023_ag2</a> (分組倉儲連結)</p>
-<h1>replit操作</h1>
+<h1>倉儲維護</h1>
+<p>replit及s.cycu.org和windows維護練習</p>
+<p><span> </span></p>
+<h2>s.cycu.org維護</h2>
+<p><span>1.</span>登入<span> s.cycu.org </span>之後<span>, </span>以 <span>ssh-keygen </span>指令<span>, </span>連續按下三個<span> Enter, </span>就可以在<span> .ssh </span>目錄建立<span> id_rsa </span>與<span> id_rsa.pub</span></p>
+<p><span>2.</span>在<span> Windows 11 </span>以<span> sftp </span>帳號<span>@s.cycu.org </span>登入遠端檔案傳輸模式後<span>, cd .ssh </span>之後<span>, </span>在<span> .ssh </span>目錄以 <span>get id_rsa* </span>取下私鑰與公鑰</p>
+<p><span>3.</span>利用<span> SciTE </span>開啟<span> id_rsa.pub, </span>並將公鑰內容送到<span> Github </span>帳號<span> Settings </span>中的<span> SSH and GPG keys</span></p>
+<p><span>4.</span>下載 <span><a href="https://mde.tw/cpnote/downloads/config">config</a> SSH </span>設定檔案<span>, </span>利用<span> sftp </span>模式<span>, </span>以<span> put config </span>送到<span> s.cycu.org </span>帳號下的<span> .ssh </span>目錄<span>, </span>此時在<span> s.cycu.org </span>已經可以利用<span> github.com </span>昨為代號<span>, </span>透過代理主機與私鑰<span>, </span>以<span>git clone --recurse-submodules<a href="mailto:git@github.com">git@github.com</a>:</span>帳號<span>/</span>倉儲名稱<span>.git </span>取下倉儲內容<span>, </span>並在<span> python3 server.py </span>之後啟動編輯網站<span>, </span>改版後<span> Convert </span>轉靜態<span>, </span>並透過 <span>chmod u+x acp </span>讓<span> acp </span>可以執行<span>.</span></p>
+<p><span>5.</span>改版並轉靜態之後<span>, </span>就可以利用<span> acp </span>按鈕執行新增提交與推送</p>
+<p><span>6.</span>若已知同一倉儲已經在其他地方將改版資料推向<span> Github, </span>在<span> s.cycu.org </span>執行改版程序之前<span>, </span>可以利用 <span>git pull </span>減少之後推送時必須解決的衝突內容，盡量不要一次上傳很多，容易發生故障</p>
+<p><span> </span></p>
+<p></p>
+<h2>windows維護</h2>
+<p>在 <span><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EV5P-1cv-y1Ih5zFT9LyTy0B6vGwNfDVlXYescPWAcMliw?e=LTUnq7">tinyc.7z</a> </span>中加上 <span><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EYLeiM_NMzFHiKnUWpcO9pwBHxwDNjNDC-4F3h_d761wMQ?e=NMdPpv">python3114_git_putty.7z</a>, </span>若已經在<span> s.cycu.org </span>登錄<span> id_rsa.pub </span>作為<span>Github </span>公鑰<span>, </span>則取下的對應<span> id_rsa </span>可以利用<span> puttygen </span>轉為<span> .ppk </span>使用</p>
+<p>利用<span> putty </span>建立名稱與連線<span> session </span>都選為<span> github.com </span>的設定<span>, </span>讓<span> Windows </span>與<span> s.cycu.org </span>進行<span> git clone </span>有相同的指令</p>
+<p>開啟<span> puttygent, load </span>進先前從<span> s.cycu.org </span>主機<span> .ssh </span>目錄取下的<span> id_rsa, </span>將原先<span> OpenSSL </span>格式的私鑰存為<span> .ppk </span>格式</p>
+<p>在<span> putty </span>所建立的<span> github.com session </span>必須指定位於<span> y: </span>目錄<span>, </span>以免之後若隨身碟代號改變而失效</p>
+<p>github.com session 設定<span> proxy </span>與<span> private key </span>位置後<span>, </span>必須利用<span> Open </span>測試是否可以<span> ssh </span>連線到<span> github.com</span></p>
+<p>putty session 設定完成後<span>, </span>必須將位於<span> Computer\HKEY_CURRENT_USER\SOFTWARE\SimonTatham </span>的<span> .reg </span>導出<span>, </span>之後只要利用滑鼠雙點擊就可以完成<span> putty session </span>設定</p>
+<p>以<span> git clone --recurse-submodules <a href="mailto:git@github.com">git@github.com</a>:</span>帳號<span>/</span>倉儲名稱<span>.git </span>取下倉儲內容<span>, </span>進入倉儲後<span>, </span>以<span> cms </span>啟動編輯網站<span>, </span>改版後<span> Convert </span>然後利用<span> acp </span>推送到<span> Github</span></p>
+<h2>replit維護</h2>
 <p>點選create a repl 再點入import from github，選擇cp2023</p>
 <p><img alt="" height="209" src="/images/cp.png" width="400"/></p>
 <p>在右上角輸入<span style="background-color: #ffff00;">python3 main.py<span style="background-color: #ffff00;"></span></span>按enter即可</p>
@@ -15,7 +35,8 @@
 <p>點選new tab就可以開啟新頁面</p>
 <p>密碼輸入admin就可以登入</p>
 <p>上面介紹參照<a href="https://41223136.github.io/cp2023/content/w7.html">https://41223136.github.io/cp2023/content/w7.html</a> 就可以編輯想要的內容</p>
-<p>編輯完後按save在按convert轉為靜態網站</p><h1>近端練習</h1>
+<p>編輯完後按save在按convert轉為靜態網站</p>
+<h1>近端練習</h1>
 <p>先在github的setting找到Developer settings點選它</p>
 <p>在Personal access tokens點classic</p>
 <p>點repo之後就完成了</p>
@@ -788,6 +809,7 @@ int main() {
 <h2>w15</h2>
 <p><img alt="" height="213" src="/images/螢幕擷取畫面 2023-12-19 160232.png" width="400"/></p>
 <p>操作過程</p>
+<p>
 <script>
 var w15 = {
   dataVersion: 1,
@@ -798,6 +820,7 @@ var w15 = {
   },
 };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="w15" height="630" muted="true" width="1008">
 <source src="./../downloads/w15.mp4" type="video/mp4"/></video></div>
@@ -851,25 +874,7 @@ var w15 = {
 <p>將課程摘要納入個人領英</p>
 <p style="padding-left: 30px;"><a href="https://www.linkedin.com/">https://www.linkedin.com/</a></p>
 <p style="padding-left: 30px;"></p>
-<h1>倉儲維護</h1>
-<p>replit及s.cycu.org和windows維護練習</p>
-<p><span> </span></p><h2>s.cycu.org維護</h2>
-<p><span>1.</span>登入<span> s.cycu.org </span>之後<span>, </span>以 <span>ssh-keygen </span>指令<span>, </span>連續按下三個<span> Enter, </span>就可以在<span> .ssh </span>目錄建立<span> id_rsa </span>與<span> id_rsa.pub</span></p>
-<p><span>2.</span>在<span> Windows 11 </span>以<span> sftp </span>帳號<span>@s.cycu.org </span>登入遠端檔案傳輸模式後<span>, cd .ssh </span>之後<span>, </span>在<span> .ssh </span>目錄以 <span>get id_rsa* </span>取下私鑰與公鑰</p>
-<p><span>3.</span>利用<span> SciTE </span>開啟<span> id_rsa.pub, </span>並將公鑰內容送到<span> Github </span>帳號<span> Settings </span>中的<span> SSH and GPG keys</span></p>
-<p><span>4.</span>下載 <span><a href="https://mde.tw/cpnote/downloads/config">config</a> SSH </span>設定檔案<span>, </span>利用<span> sftp </span>模式<span>, </span>以<span> put config </span>送到<span> s.cycu.org </span>帳號下的<span> .ssh </span>目錄<span>, </span>此時在<span> s.cycu.org </span>已經可以利用<span> github.com </span>昨為代號<span>, </span>透過代理主機與私鑰<span>, </span>以<span>git clone --recurse-submodules<a href="mailto:git@github.com">git@github.com</a>:</span>帳號<span>/</span>倉儲名稱<span>.git </span>取下倉儲內容<span>, </span>並在<span> python3 server.py </span>之後啟動編輯網站<span>, </span>改版後<span> Convert </span>轉靜態<span>, </span>並透過 <span>chmod u+x acp </span>讓<span> acp </span>可以執行<span>.</span></p>
-<p><span>5.</span>改版並轉靜態之後<span>, </span>就可以利用<span> acp </span>按鈕執行新增提交與推送</p>
-<p><span>6.</span>若已知同一倉儲已經在其他地方將改版資料推向<span> Github, </span>在<span> s.cycu.org </span>執行改版程序之前<span>, </span>可以利用 <span>git pull </span>減少之後推送時必須解決的衝突內容，盡量不要一次上傳很多，容易發生故障</p>
-<p><span> </span></p>
 <p></p>
-<h2>windows維護</h2>
-<p>在 <span><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EV5P-1cv-y1Ih5zFT9LyTy0B6vGwNfDVlXYescPWAcMliw?e=LTUnq7">tinyc.7z</a> </span>中加上 <span><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EYLeiM_NMzFHiKnUWpcO9pwBHxwDNjNDC-4F3h_d761wMQ?e=NMdPpv">python3114_git_putty.7z</a>, </span>若已經在<span> s.cycu.org </span>登錄<span> id_rsa.pub </span>作為<span>Github </span>公鑰<span>, </span>則取下的對應<span> id_rsa </span>可以利用<span> puttygen </span>轉為<span> .ppk </span>使用</p>
-<p>利用<span> putty </span>建立名稱與連線<span> session </span>都選為<span> github.com </span>的設定<span>, </span>讓<span> Windows </span>與<span> s.cycu.org </span>進行<span> git clone </span>有相同的指令</p>
-<p>開啟<span> puttygent, load </span>進先前從<span> s.cycu.org </span>主機<span> .ssh </span>目錄取下的<span> id_rsa, </span>將原先<span> OpenSSL </span>格式的私鑰存為<span> .ppk </span>格式</p>
-<p>在<span> putty </span>所建立的<span> github.com session </span>必須指定位於<span> y: </span>目錄<span>, </span>以免之後若隨身碟代號改變而失效</p>
-<p>github.com session 設定<span> proxy </span>與<span> private key </span>位置後<span>, </span>必須利用<span> Open </span>測試是否可以<span> ssh </span>連線到<span> github.com</span></p>
-<p>putty session 設定完成後<span>, </span>必須將位於<span> Computer\HKEY_CURRENT_USER\SOFTWARE\SimonTatham </span>的<span> .reg </span>導出<span>, </span>之後只要利用滑鼠雙點擊就可以完成<span> putty session </span>設定</p>
-<p>以<span> git clone --recurse-submodules <a href="mailto:git@github.com">git@github.com</a>:</span>帳號<span>/</span>倉儲名稱<span>.git </span>取下倉儲內容<span>, </span>進入倉儲後<span>, </span>以<span> cms </span>啟動編輯網站<span>, </span>改版後<span> Convert </span>然後利用<span> acp </span>推送到<span> Github</span></p>
 <p><span> </span></p>
 <p></p>
 <p></p>
