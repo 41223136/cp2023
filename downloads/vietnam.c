@@ -27,7 +27,7 @@ void drawVietnamFlag() {
     FILE *output;
 
     im = gdImageCreateTrueColor(WIDTH, HEIGHT);
-    output = fopen("vietnam_flag.png", "wb");
+    output = fopen("./../images/vietnam_flag.png", "wb");
 
     // Draw red background
     gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT - 1, RED);
