@@ -45,7 +45,8 @@
 <p>再到github確認</p>
 <p><img alt="" height="178" src="/images/cp5.png" width="400"/></p>
 <p>等待轉好之後顯現打勾就代表完成了</p>
-<p>如果顯示<span style="background-color: #ff0000;">紅色<span style="background-color: #ff0000;"></span></span>代表上傳失敗</p><h1>近端練習</h1>
+<p>如果顯示<span style="background-color: #ff0000;">紅色<span style="background-color: #ff0000;"></span></span>代表上傳失敗</p>
+<h1>近端練習</h1>
 <p>先在github的setting找到Developer settings點選它</p>
 <p>在Personal access tokens點classic</p>
 <p>點repo之後就完成了</p>
@@ -126,7 +127,8 @@ int main() {
     return 0;
 }</pre>
 <p><img alt="" height="300" src="/images/gnuplot_ex1.png" width="600"/></p>
-<p></p><h2>w6</h2>
+<p></p>
+<h2>w6</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;</pre>
@@ -866,9 +868,49 @@ var w15 = {
 <p>把剛剛複製的key-rsa貼上之後點save private key 即可!</p>
 <p>儲存到<span style="background-color: #ffff00;">tinyc-data-home </span>名稱:學號</p>
 <p>將鑰匙儲存在自己的USB當中</p>
-<h1>國旗</h1>
+<h1>各國國旗</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+
+int main() {
+    int width = 300;  // 宽度
+    int height = 200; // 高度
+
+    gdImagePtr image = gdImageCreateTrueColor(width, height);
+
+    if (image == NULL) {
+        printf("Failed to create image.\n");
+        return 1;
+    }
+
+    // 确定颜色索引
+    int green = gdImageColorAllocate(image, 0, 128, 0);
+    int white = gdImageColorAllocate(image, 255, 255, 255);
+    int red = gdImageColorAllocate(image, 255, 0, 0);
+
+    // 填充颜色
+    gdImageFilledRectangle(image, 0, 0, width / 3, height, green);
+    gdImageFilledRectangle(image, width / 3, 0, (width / 3) * 2, height, white);
+    gdImageFilledRectangle(image, (width / 3) * 2, 0, width, height, red);
+
+    FILE *outputFile;
+    outputFile = fopen("./../images/italian_flag.png", "wb");
+
+    if (outputFile == NULL) {
+        printf("Failed to open file for writing.\n");
+        return 1;
+    }
+
+    gdImagePng(image, outputFile);
+    fclose(outputFile);
+
+    gdImageDestroy(image);
+
+    return 0;
+}
+</pre>
 <p><img alt="" height="267" src="/images/italian_flag.png" width="400"/></p>
-<h1>課程評分</h1>
+<p></p><h1>課程評分</h1>
 <p><span style="background-color: #ffff00;">課程評分</span>:</p>
 <p>線上測驗、個人期望成績<span>、</span>期中網站與簡報、期末網站與簡報.</p>
 <p><span style="background-color: #ffff00;">線上測驗</span>:</p>
@@ -890,11 +932,6 @@ var w15 = {
 <p style="padding-left: 30px;">pdf</p>
 <p>將課程摘要納入個人領英</p>
 <p style="padding-left: 30px;"><a href="https://www.linkedin.com/">https://www.linkedin.com/</a></p>
-<p style="padding-left: 30px;"></p>
-<p></p>
-<p><span> </span></p>
-<p></p>
-<p></p>
 <h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
