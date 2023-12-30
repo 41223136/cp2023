@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='倉儲維護.html'>倉儲維護</a><ul class='dropdown'><li><a href='s.cycu.org維護.html'>s.cycu.org維護</a><li><a href='windows維護.html'>windows維護</a><li><a href='replit維護.html'>replit維護</a></li></ul><li><a href='近端練習.html'>近端練習</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='w1~w4.html'>w1~w4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='ROC.html'>ROC</a><li><a href='USA.html'>USA</a><li><a href='Japan.html'>Japan</a><li><a href='PROC.html'>PROC</a><li><a href='UK.html'>UK</a></li></ul><li><a href='w7.html'>w7</a><li class='has-children'><a href='w12.html'>w12</a><ul class='dropdown'><li><a href='helloworld.html'>helloworld</a><li><a href='GD繪圖程式1.html'>GD繪圖程式1</a></li></ul><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a></li></ul><li class='has-children'><a href='note.html'>note</a><ul class='dropdown'><li><a href='ssh.html'>ssh</a><li><a href='puttygen.html'>puttygen</a></li></ul><li class='has-children'><a href='各國國旗.html'>各國國旗</a><ul class='dropdown'><li><a href='Italian.html'>Italian</a><li><a href='Vietnam.html'>Vietnam</a><li><a href='Bangladesh.html'>Bangladesh</a></li></ul><li><a href='課程評分.html'>課程評分</a><li><a href='課程總結.html'>課程總結</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='倉儲維護.html'>倉儲維護</a><ul class='dropdown'><li><a href='s.cycu.org維護.html'>s.cycu.org維護</a><li><a href='windows維護.html'>windows維護</a><li><a href='replit維護.html'>replit維護</a></li></ul><li><a href='近端練習.html'>近端練習</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='w1~w4.html'>w1~w4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='ROC.html'>ROC</a><li><a href='USA.html'>USA</a><li><a href='Japan.html'>Japan</a><li><a href='PROC.html'>PROC</a><li><a href='UK.html'>UK</a></li></ul><li><a href='w7.html'>w7</a><li class='has-children'><a href='w12.html'>w12</a><ul class='dropdown'><li><a href='helloworld.html'>helloworld</a><li><a href='GD繪圖程式1.html'>GD繪圖程式1</a></li></ul><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a></li></ul><li class='has-children'><a href='note.html'>note</a><ul class='dropdown'><li><a href='ssh.html'>ssh</a><li><a href='puttygen.html'>puttygen</a></li></ul><li class='has-children'><a href='各國國旗.html'>各國國旗</a><ul class='dropdown'><li><a href='Italian.html'>Italian</a><li><a href='Vietnam.html'>Vietnam</a><li><a href='Bangladesh.html'>Bangladesh</a><li><a href='Laos.html'>Laos</a></li></ul><li><a href='課程評分.html'>課程評分</a><li><a href='課程總結.html'>課程總結</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,7 +142,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Vietnam << <a href='Vietnam.html'>Previous</a> <a href='課程評分.html'>Next</a> >> 課程評分<br /><h1>Bangladesh</h1>
+    <div id="tipue_search_content">Vietnam << <a href='Vietnam.html'>Previous</a> <a href='Laos.html'>Next</a> >> Laos<br /><h1>Bangladesh</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -179,51 +179,7 @@ int main() {
     return 0;
 }</pre>
 <p><img alt="" height="267" src="./../images/bangladesh_flag.png" width="400"/></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
- 
-#define WIDTH 600
-#define HEIGHT 400
-#define RED 0xCE1126    // Red color
-#define WHITE 0xFFFFFF  // White color
-#define BLUE 0x0033A0   // Blue color
- 
-void drawLaosFlag() {
-    gdImagePtr im;
-    FILE *output;
- 
-    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
-    output = fopen("laos_flag.png", "wb");
- 
-    // Draw red background
-    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT - 1, RED);
- 
-    // Draw blue rectangle (symbolizing the Mekong River)
-    int blueRectWidth = WIDTH;
-    int blueRectHeight = HEIGHT / 2;  // Increase the height
-    int blueRectX = 0;
-    int blueRectY = HEIGHT / 2 - blueRectHeight / 2;
- 
-    gdImageFilledRectangle(im, blueRectX, blueRectY, blueRectX + blueRectWidth, blueRectY + blueRectHeight, BLUE);
- 
-    // Draw white circle
-    int centerX = WIDTH / 2;
-    int centerY = HEIGHT / 2;
-    int circleRadius = HEIGHT / 8;  // Adjusted radius
- 
-    gdImageFilledEllipse(im, centerX, centerY, circleRadius * 2, circleRadius * 2, WHITE);
- 
-    gdImagePng(im, output);
-    fclose(output);
-    gdImageDestroy(im);
-}
- 
-int main() {
-    drawLaosFlag();
-    return 0;
-}</pre>
-<p></p><br />Vietnam << <a href='Vietnam.html'>Previous</a> <a href='課程評分.html'>Next</a> >> 課程評分</div>
+<br />Vietnam << <a href='Vietnam.html'>Previous</a> <a href='Laos.html'>Next</a> >> Laos</div>
         
     <!-- footer -->
       <div class="container">

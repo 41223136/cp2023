@@ -142,49 +142,52 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">各國國旗 << <a href='各國國旗.html'>Previous</a> <a href='Vietnam.html'>Next</a> >> Vietnam<br /><h1>Italian</h1>
+    <div id="tipue_search_content">Bangladesh << <a href='Bangladesh.html'>Previous</a> <a href='課程評分.html'>Next</a> >> 課程評分<br /><h1>Laos</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
-
-int main() {
-    int width = 300;  // 宽度
-    int height = 200; // 高度
-
-    gdImagePtr image = gdImageCreateTrueColor(width, height);
-
-    if (image == NULL) {
-        printf("Failed to create image.\n");
-        return 1;
-    }
-
-    // 确定颜色索引
-    int green = gdImageColorAllocate(image, 0, 128, 0);
-    int white = gdImageColorAllocate(image, 255, 255, 255);
-    int red = gdImageColorAllocate(image, 255, 0, 0);
-
-    // 填充颜色
-    gdImageFilledRectangle(image, 0, 0, width / 3, height, green);
-    gdImageFilledRectangle(image, width / 3, 0, (width / 3) * 2, height, white);
-    gdImageFilledRectangle(image, (width / 3) * 2, 0, width, height, red);
-
-    FILE *outputFile;
-    outputFile = fopen("./../images/italian_flag.png", "wb");
-
-    if (outputFile == NULL) {
-        printf("Failed to open file for writing.\n");
-        return 1;
-    }
-
-    gdImagePng(image, outputFile);
-    fclose(outputFile);
-
-    gdImageDestroy(image);
-
-    return 0;
+#include &lt;math.h&gt;
+ 
+#define WIDTH 600
+#define HEIGHT 400
+#define RED 0xCE1126    // Red color
+#define WHITE 0xFFFFFF  // White color
+#define BLUE 0x0033A0   // Blue color
+ 
+void drawLaosFlag() {
+    gdImagePtr im;
+    FILE *output;
+ 
+    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
+    output = fopen("laos_flag.png", "wb");
+ 
+    // Draw red background
+    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT - 1, RED);
+ 
+    // Draw blue rectangle (symbolizing the Mekong River)
+    int blueRectWidth = WIDTH;
+    int blueRectHeight = HEIGHT / 2;  // Increase the height
+    int blueRectX = 0;
+    int blueRectY = HEIGHT / 2 - blueRectHeight / 2;
+ 
+    gdImageFilledRectangle(im, blueRectX, blueRectY, blueRectX + blueRectWidth, blueRectY + blueRectHeight, BLUE);
+ 
+    // Draw white circle
+    int centerX = WIDTH / 2;
+    int centerY = HEIGHT / 2;
+    int circleRadius = HEIGHT / 8;  // Adjusted radius
+ 
+    gdImageFilledEllipse(im, centerX, centerY, circleRadius * 2, circleRadius * 2, WHITE);
+ 
+    gdImagePng(im, output);
+    fclose(output);
+    gdImageDestroy(im);
 }
-</pre>
-<p><img alt="" height="267" src="./../images/italian_flag.png" width="400"/></p>
-<br />各國國旗 << <a href='各國國旗.html'>Previous</a> <a href='Vietnam.html'>Next</a> >> Vietnam</div>
+ 
+int main() {
+    drawLaosFlag();
+    return 0;
+}</pre>
+<p></p><br />Bangladesh << <a href='Bangladesh.html'>Previous</a> <a href='課程評分.html'>Next</a> >> 課程評分</div>
         
     <!-- footer -->
       <div class="container">
